@@ -5,15 +5,15 @@
 #include "token.h"
 
 struct scanner {
-    File *file;
+    FILE *file;
     char symbol;
     unsigned int line, row;
     void( *nextSymbol )();
-}
+};
 
 extern struct scanner scanner;
 
 void initScanner( char *fileName );
-enum token nextToken();
+struct token nextToken();
 
 #endif // KCI_LEXER_H
